@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amirreza — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#1b1815;
+    --paper:#221e19;
+    --line:#3c352c;
+    --ink:#f2ece1;
+    --dim:#a99a86;
+    --amber:#e8ab4d;
+    --steel:#7fa0ad;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Work Sans',sans-serif;
+    background-image: radial-gradient(circle at 1px 1px, rgba(242,236,225,0.035) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .display{ font-family:'Fraunces',serif; font-optical-sizing:auto; }
+  .mono{ font-family:'JetBrains Mono',monospace; letter-spacing:0.02em; }
+  .wrap{ max-width:920px; margin:0 auto; padding:0 28px; }
+  .margin-note{
+    font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--dim);
+    writing-mode: vertical-rl; text-orientation: mixed; letter-spacing:0.08em;
+  }
+  .rule{ border-top:1px solid var(--line); }
+  .frame{
+    background:var(--paper); border:1px solid var(--line); border-radius:2px;
+    transition: border-color .3s ease, transform .3s ease;
+  }
+  .frame:hover{ border-color:var(--amber); transform:translateY(-3px); }
+  .perf{
+    display:flex; gap:6px; padding:6px 0;
+  }
+  .perf span{ width:6px; height:6px; border-radius:50%; background:var(--line); }
+  a.readout{
+    display:inline-flex; align-items:center; gap:10px;
+    border:1px solid var(--amber); color:var(--amber);
+    padding:12px 20px; border-radius:2px; text-decoration:none;
+    font-family:'JetBrains Mono',monospace; font-size:13px;
+    transition: background .25s ease, color .25s ease;
+  }
+  a.readout:hover{ background:var(--amber); color:var(--bg); }
+  @media (prefers-reduced-motion: no-preference){
+    .trace{ stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 2.4s ease forwards; }
+  }
+  @keyframes draw{ to{ stroke-dashoffset:0; } }
+  ::selection{ background:var(--amber); color:var(--bg); }
+  a:focus-visible, button:focus-visible{ outline:2px solid var(--amber); outline-offset:3px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="wrap" style="padding-top:72px; padding-bottom:60px;">
+  <div class="mono" style="font-size:12px; color:var(--dim); margin-bottom:18px;">
+    AMIRREZA — MECH. ENGINEERING × APPLIED ML — KAISERSLAUTERN, DE
+  </div>
+  <h1 class="display" style="font-size:clamp(2.6rem,7vw,4.6rem); font-weight:600; line-height:1.05; margin:0 0 28px; max-width:14ch;">
+    Where surfaces meet signals.
+  </h1>
+  <p style="max-width:46ch; color:var(--dim); font-size:17px; line-height:1.6; margin-bottom:36px;">
+    I build physics-informed models and explainable ML for industrial systems —
+    reading the data that friction, wear, and vibration leave behind.
+  </p>
+
+  <!-- signature: a hand-drawn-feeling waveform / wear-trace line -->
+  <svg viewBox="0 0 860 140" width="100%" height="140" style="max-width:640px; margin-bottom:8px;">
+    <line x1="0" y1="70" x2="860" y2="70" stroke="var(--line)" stroke-width="1"/>
+    <path class="trace" d="M0,70 C40,70 60,20 100,60 S160,110 200,70 C240,40 260,90 300,70
+      C360,45 380,95 420,70 S480,20 520,70 C560,100 580,45 620,70
+      C660,90 680,30 720,70 S780,100 820,70 L860,70"
+      fill="none" stroke="var(--steel)" stroke-width="2"/>
+  </svg>
+  <div class="mono" style="font-size:11px; color:var(--dim);">FIG. 01 — SURFACE PROFILE / TIME SERIES</div>
+</header>
+
+<div class="wrap rule"></div>
+
+<!-- PROJECTS -->
+<section id="projects" class="wrap" style="padding-top:64px; padding-bottom:48px;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:32px;">
+    <h2 class="display" style="font-size:1.9rem; font-weight:600; margin:0;">Projects</h2>
+    <span class="mono" style="font-size:12px; color:var(--dim);">FIG. 02</span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px;">
+    <div class="frame" style="padding:24px;">
+      <div class="mono" style="font-size:11px; color:var(--amber); margin-bottom:10px;">01 · RESEARCH</div>
+      <h3 class="display" style="font-size:1.25rem; font-weight:500; margin:0 0 10px;">LSTM Surrogate Modeling for Dry Gas Seals</h3>
+      <p style="color:var(--dim); font-size:14.5px; line-height:1.55; margin:0;">
+        Master's thesis on simulation–experiment deviations, with Temporal Integrated
+        Gradients for feature attribution.
+      </p>
+      <div class="mono" style="font-size:11px; color:var(--dim); margin-top:16px;">EDIT: link repo / writeup →</div>
+    </div>
+
+    <div class="frame" style="padding:24px;">
+      <div class="mono" style="font-size:11px; color:var(--amber); margin-bottom:10px;">02 · BUILD</div>
+      <h3 class="display" style="font-size:1.25rem; font-weight:500; margin:0 0 10px;">Raspberry Pi Voice Assistant</h3>
+      <p style="color:var(--dim); font-size:14.5px; line-height:1.55; margin:0;">
+        A hands-on home-automation build, voice-controlled, running fully on-device.
+      </p>
+      <div class="mono" style="font-size:11px; color:var(--dim); margin-top:16px;">EDIT: link repo / demo →</div>
+    </div>
+
+    <div class="frame" style="padding:24px;">
+      <div class="mono" style="font-size:11px; color:var(--amber); margin-bottom:10px;">03 · SYSTEMS</div>
+      <h3 class="display" style="font-size:1.25rem; font-weight:500; margin:0 0 10px;">Industrial Edge Pipelines</h3>
+      <p style="color:var(--dim); font-size:14.5px; line-height:1.55; margin:0;">
+        MQTT / 5G edge pipelines bridging sensor streams and ML inference on the shop floor.
+      </p>
+      <div class="mono" style="font-size:11px; color:var(--dim); margin-top:16px;">EDIT: link details →</div>
+    </div>
+
+    <div class="frame" style="padding:24px; border-style:dashed; display:flex; align-items:center;">
+      <p class="mono" style="font-size:12px; color:var(--dim); margin:0;">04 · open slot — duplicate this card for your next project</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<!-- HOBBIES -->
+<section id="hobbies" class="wrap" style="padding-top:64px; padding-bottom:48px;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
+    <h2 class="display" style="font-size:1.9rem; font-weight:600; margin:0;">Outside the lab</h2>
+    <span class="mono" style="font-size:12px; color:var(--dim);">FIG. 03</span>
+  </div>
+  <div class="perf">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:8px;">
+    <div class="frame" style="padding:22px;">
+      <h3 class="display" style="font-size:1.05rem; font-weight:500; margin:0 0 6px;">Photography</h3>
+      <p style="color:var(--dim); font-size:13.5px; margin:0;">EDIT: swap in a few frames or a gallery link.</p>
+    </div>
+    <div class="frame" style="padding:22px;">
+      <h3 class="display" style="font-size:1.05rem; font-weight:500; margin:0 0 6px;">Sports Tracking</h3>
+      <p style="color:var(--dim); font-size:13.5px; margin:0;">EDIT: training notes or a watch/data writeup.</p>
+    </div>
+    <div class="frame" style="padding:22px;">
+      <h3 class="display" style="font-size:1.05rem; font-weight:500; margin:0 0 6px;">Arsenal FC</h3>
+      <p style="color:var(--dim); font-size:13.5px; margin:0;">EDIT: matchday takes, or drop this card.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap rule"></div>
+
+<!-- RESUME -->
+<section id="resume" class="wrap" style="padding-top:64px; padding-bottom:80px;">
+  <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:20px;">
+    <h2 class="display" style="font-size:1.9rem; font-weight:600; margin:0;">Resume</h2>
+    <span class="mono" style="font-size:12px; color:var(--dim);">FIG. 04</span>
+  </div>
+  <p style="max-width:48ch; color:var(--dim); font-size:15.5px; line-height:1.6; margin-bottom:28px;">
+    M.Sc. Mechanical Engineering (Applied Computer Science), RPTU Kaiserslautern —
+    physics-informed ML, tribology, and industrial data systems.
+  </p>
+  <a href="#" class="readout">↓ DOWNLOAD_CV.PDF <span style="color:var(--dim);">— edit link</span></a>
+</section>
+
+<footer class="wrap mono" style="font-size:11px; color:var(--dim); padding-bottom:40px;">
+  Single HTML file. No build step. Edit directly.
+</footer>
+
+</body>
+</html>
